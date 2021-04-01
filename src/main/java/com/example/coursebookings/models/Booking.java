@@ -14,7 +14,7 @@ public class Booking {
     private Long id;
 
     @Column(name = "date")
-    private String data;
+    private String date;
 
     @JsonIgnoreProperties({"bookings"})
     @ManyToOne
@@ -26,8 +26,8 @@ public class Booking {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    public Booking(String data, Course course, Customer customer) {
-        this.data = data;
+    public Booking(String date, Course course, Customer customer) {
+        this.date = date;
         this.course = course;
         this.customer = customer;
     }
@@ -43,12 +43,12 @@ public class Booking {
         this.id = id;
     }
 
-    public String getData() {
-        return data;
+    public String getDate() {
+        return date;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public Course getCourse() {
