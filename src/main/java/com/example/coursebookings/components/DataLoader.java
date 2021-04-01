@@ -29,8 +29,12 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
         Customer gregor = new Customer("Gregor", "Simpson", 29);
         Customer laureline = new Customer("Laureline", "Vaucoy", 12);
+        Customer henry = new Customer("Henry", "Nuggs", 20);
+        Customer alfie = new Customer("Alfie", "Chonk", 20);
         customerRepository.save(gregor);
         customerRepository.save(laureline);
+        customerRepository.save(henry);
+        customerRepository.save(alfie);
 
         Course python = new Course("Intro to Python", "Glasgow", 3);
         Course javaScript = new Course("Head Bashing in JavaScript", "Glasgow", 4);
@@ -43,10 +47,12 @@ public class DataLoader implements ApplicationRunner {
         Booking booking2 = new Booking("15-02-2021", javaScript, laureline);
         Booking booking3 = new Booking("15-02-2021", java, laureline);
         Booking booking4 = new Booking("01-01-2021", python, laureline);
+        Booking booking5 = new Booking("01-01-2021", python, henry);
         bookingRepository.save(booking1);
         bookingRepository.save(booking2);
         bookingRepository.save(booking3);
         bookingRepository.save(booking4);
+        bookingRepository.save(booking5);
 
     }
 
